@@ -42,14 +42,22 @@ def ComplexityCheck():
 def PopularWordsCheck():
     global password
     print(f"my password is {password} from PopularWordsCheck")
+    points = 0
     if "123" in password:
-        return -2
-    elif "admin" in password:
-        return -2
-    else:
-        return 0
+        points -= 2
+    if "admin" in password:
+        points -= 2
+
+    return points
 
 
 password = InputPassword()
 final_points = LengthCheck() + ComplexityCheck() + PopularWordsCheck()
 print(final_points)
+
+if final_points <= 0:
+    print("Your password is very weak :(")
+elif final_points <= 3:
+    print("Your password has medium level strength :|")
+else:
+    print("Your password is very strong :)")
