@@ -5,11 +5,13 @@ def InputPassword():
     else:
         return password
 
-def LengthCheck(password, CurrentPoints):
+def LengthCheck(password, current_points):
     if len(password) < 8:
-        return CurrentPoints
+        return current_points
     elif len(password) < 12:
-        return CurrentPoints + 1
+        return current_points + 1
     else:
-        return CurrentPoints + 2
+        return current_points + 2
 
+def ComplexityCheck(password, current_points)
+    pass
