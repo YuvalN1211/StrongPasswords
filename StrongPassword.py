@@ -1,5 +1,9 @@
-password = str(input("Enter yuor password: "))
-
+def InputPassword():
+    password = str(input("Enter your password: "))
+    if(len(password) == 0):
+        InputPassword()
+    else:
+        return password
 
 def LengthCheck(password, CurrentPoints):
     if len(password) < 8:
@@ -9,15 +13,3 @@ def LengthCheck(password, CurrentPoints):
     else:
         return CurrentPoints + 2
 
-
-
-
-
-
-
-
-
-
-
-if __name__ == "__main__":
-    print("Im main :)")
